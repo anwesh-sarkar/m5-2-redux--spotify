@@ -16,7 +16,7 @@ import {
   receiveAccessTokenError,
 } from "../../actions.js";
 
-const DEFAULT_ARTIST_ID = "2eogQKWWoohI3BSnoG7E2U";
+const DEFAULT_ARTIST_ID = "1zuJe6b1roixEKMOtyrEak";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -49,12 +49,10 @@ const App = () => {
       <GlobalStyle />
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Redirect to={`/artists/${DEFAULT_ARTIST_ID}`} />
-          </Route>
-          <Route path="/artists/:id">
+          <Route path="/artist/:artistId">
             <ArtistRoute />
           </Route>
+          <Redirect to={`/artist/${DEFAULT_ARTIST_ID}`} />
         </Switch>
       </Router>
     </Wrapper>
